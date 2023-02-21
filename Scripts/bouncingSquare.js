@@ -7,10 +7,10 @@ let x = 10;
 let y = 10;
 
 let multiplierX = 1;
-let    multiplierY = 1;
+let multiplierY = 1;
 
-let movementSpeed = 5;
-let fps = 100;
+let movementSpeed = 1;
+let fps = 1;
 
 function draw(x, y, width, height) {
     ctx.fillRect(x, y, width, height);
@@ -34,10 +34,10 @@ function loop(timestamp) {
     x += movementSpeed * multiplierX;
     y += movementSpeed * multiplierY;
 
-    if(x >= 800 - width) { multiplierX *= -1; }
-    else if(y >= 600 - height) { multiplierY *= -1; }
-    else if(x <= 0) { multiplierX *= -1; }
-    else if(y <= 0) { multiplierY *= -1; }
+    if(x > 800 - width) { multiplierX *= -1; }
+    else if(y > 600 - height) { multiplierY *= -1; }
+    else if(x < 0) { multiplierX *= -1; }
+    else if(y < 0) { multiplierY *= -1; }
 
     sleep(fps);
     lastRender = timestamp
