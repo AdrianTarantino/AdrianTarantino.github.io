@@ -12,6 +12,8 @@ let multiplierY = 1;
 let movementSpeed = 1;
 let fps = 1;
 
+console.log("Test1");
+
 function draw(x, y, width, height) {
     ctx.fillRect(x, y, width, height);
 }
