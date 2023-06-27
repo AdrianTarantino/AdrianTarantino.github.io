@@ -1,0 +1,50 @@
+:root {
+    --blue:#446389;
+    --white:#ffffff;
+    --light-blue:#CAE7DF;
+    --dark-blue: #0A3D5B;
+}
+
+/* body {
+    background-image: url('./images/LandingPageBackground.jpg');
+    background-position-x: center;
+    background-size: 300%;
+    background-repeat:no-repeat; 
+} */
+
+.title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 60px;
+
+    color:var(--blue);
+}
+
+.description {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+
+    color:var(--white);
+}
+
+.landing-page-base {
+    max-width: 500px;
+}
+
+.content {
+    position:absolute;
+    left:0px;
+    top:0px;
+
+    height:100%;
+    max-width: 700px;
+
+    padding: 10px;
+    background-color:var(--dark-blue);
+}
+
+.background-image {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height:100%;
+}
