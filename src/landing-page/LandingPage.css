@@ -1,29 +1,29 @@
 :root {
-    --blue:#446389;
-    --white:#ffffff;
-    --light-blue:#CAE7DF;
+    --blue: #446389;
+    --white: #ffffff;
+    --light-blue: #CAE7DF;
     --dark-blue: #0A3D5B;
+    --dark-blue-transparent: #0A3D5Be1;
 }
-
-/* body {
-    background-image: url('./images/LandingPageBackground.jpg');
-    background-position-x: center;
-    background-size: 300%;
-    background-repeat:no-repeat; 
-} */
 
 .title {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 60px;
 
-    color:var(--blue);
+    color: var(--blue);
 }
 
 .description {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
+}
 
-    color:var(--white);
+.dark {
+    color: var(--white);
+}
+
+.light {
+    color: var(--dark-blue);
 }
 
 .landing-page-base {
@@ -31,15 +31,15 @@
 }
 
 .content {
-    position:absolute;
-    left:0px;
-    top:0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 
-    height:100vh;
+    height: 100vh;
     max-width: 700px;
 
     padding: 10px;
-    background-color:var(--dark-blue);
+    background-color: var(--dark-blue);
 }
 
 .icon {
@@ -49,20 +49,32 @@
     background-color: var(--light-blue);
 
     border-radius: 15px;
-    align-content: center;
-    
-    margin-left:15px;
+    text-align: center;
+    vertical-align: middle;
+
+    margin-left: 15px;
     margin-right: 15px;
 }
 
 .icon-row {
-    margin:auto;
+    margin: auto;
+}
+
+.popup-box {
+    width: clamp(50%, 500px);
+    height: 250px;
+    margin-top: 15px;
+
+    border-radius: 10px;
+    background-color: var(--light-blue);
+
+    padding: 10px;
 }
 
 .background-image {
     position: fixed;
     right: 0px;
     top: 0px;
-    height:110vh;
+    height: 110vh;
     overflow: hidden;
 }
