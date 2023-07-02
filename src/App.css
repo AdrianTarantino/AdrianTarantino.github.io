@@ -1,0 +1,33 @@
+:root {
+    --text: #0a1919;
+    --background: #fbfdfe;
+    --bubble-box-background: #edf0f1;
+    --secondary-bubble-box-background: #c0c5c6;
+    --red: #b04040;
+    --accent: #40999c;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.in-row-icons {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.about-me-content {
+    width: clamp(40%, 500px, 100%);
+}
+
+.grid-section {
+    width: 100%;
+    height: 100%;
+}
+
+.content-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
