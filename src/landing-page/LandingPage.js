@@ -7,7 +7,7 @@ import RustImageTB from './images/icons/transparent-background/RustImageTB.png';
 import './LandingPage.css';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Title() {
     return (
@@ -23,17 +23,16 @@ function SelfDescription() {
 }
 
 function Icon({ onClick, imagePath, iconName }) {
-    const [isOpen, setIsOpen] = useState(false);
-
     return (
-        <td>
+        <i>
             <motion.div className='icon'
                 onClick={onClick}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}>
                 <img className='icon-image' src={imagePath} alt={iconName} width='100' />
             </motion.div>
-        </td>
+        </i>
+
     );
 }
 
@@ -45,11 +44,21 @@ function IconRow({ onIconClicks }) {
     <Icon onClick={onIconClicks[4]} imagePath={RustImageTB} iconName='Rust' />];
 
     return (
-        <table className='icon-row'><tbody>
-            <tr>
-                {icons}
-            </tr>
-        </tbody></table>
+        <div className='icon-grid'>
+            {icons}
+        </div>
+    );
+}
+
+function PopupBoxCloseButton({ onClick }) {
+    return (
+        <motion.div
+            className='popup-box-close-button'
+            onClick={onClick}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}>
+            x
+        </motion.div>
     );
 }
 
@@ -59,13 +68,14 @@ function PopupBox({ text, handleClose }) {
             className='popup-box'
             initial={{ rotate: -15, scale: 0 }}
             animate={{ rotate: 0, scale: 1 }}
+            exit={{ rotate: -15, scale: 0 }}
             transition={{
                 type: "spring",
                 stiffness: 260,
                 damping: 20
             }}>
+            <PopupBoxCloseButton onClick={handleClose} />
             <p className='description light'>{text}</p>
-            <button onClick={handleClose}>Close</button>
         </motion.div>
     );
 }
@@ -75,7 +85,7 @@ const popupMessages = [
     "I love how this language allows me to write instant legacy code.",
     "Out of all languages on this list, I am most confortable in Python.",
     "React is a tool that I've recently picked up. I chose to learn React JS because I wasn't able to find a better UI library in the other languages I knew.",
-    "Rust is probably my least comfortable language, and I rarely code projects in Rust. I still think it's a great language however Strings are a bit to complicated."
+    "Rust is probably my least comfortable language, and I rarely code projects in Rust. I still think it's a great language with overly complicated Strings."
 ];
 
 function LandingPageBase() {
@@ -97,15 +107,20 @@ function LandingPageBase() {
     ];
 
     return (
-        <div className='landing-page-base'>
+        <>
             <img className='background-image' src={LandingPageBackground} />
             <div className='content'>
                 <Title />
                 <SelfDescription />
-                <IconRow onIconClicks={onIconsClicks}/>
-                {popupOpen && <PopupBox text={popupText} handleClose={() => setPopupOpen(false)}/>}
+                <IconRow onIconClicks={onIconsClicks} />
+                <AnimatePresence
+                    initial={false}
+                    mode={'wait'}>
+                    {popupOpen && <PopupBox text={popupText} handleClose={() => setPopupOpen(false)} />}
+                </AnimatePresence>
+
             </div>
-        </div>
+        </>
     );
 }
 

@@ -6,6 +6,6 @@ import LandingPageBase from './landing-page/LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPageBase/>
+    <LandingPageBase className='landing-page-base'/>
   </React.StrictMode>
 );
