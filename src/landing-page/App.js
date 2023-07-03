@@ -19,7 +19,7 @@ import './App.css';
 const popupMessages = [
     "Arduino C was the first programming language I learned (and my favourite btw).",
     "I love how this language allows me to write instant legacy code.",
-    "Out of all languages on this list, I am most confortable in Python.",
+    "Out of all languages on this list, I am most comfortable in Python.",
     "React is a tool that I've recently picked up. I chose to learn React JS because I wasn't able to find a better UI library in the other languages I knew.",
     "Rust is probably my least comfortable language, and I rarely code projects in Rust. I still think it's a great language with overly complicated Strings."
 ];
