@@ -1,0 +1,92 @@
+:root {
+    --text: #0a1919;
+    --background: #fbfdfe;
+    --bubble-box-background: #edf0f1;
+    --secondary-bubble-box-background: #c0c5c6;
+    --red: #b04040;
+    --accent: #40999c;
+}
+
+
+.icon-box {
+    border-radius: 15px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    background-color: var(--bubble-box-background);
+    color: var(--text);
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.size0 {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    margin-left: 3px;
+
+    border-radius: 5px;
+    
+    background-color: var(--red);
+    color: var(--background);
+    font-size: 20px;
+
+    justify-content: center;
+    vertical-align: middle;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.size1 {
+    width: 100px;
+    height: 100px;
+}
+
+.size2 {
+    width: 150px;
+    height: 150px;
+}
+
+.size3 {
+    width: 160px;
+    height: 160px;
+}
+
+.size4 {
+    width: 200px;
+    height: 200px;
+    /* width: clamp(fit-content, 40%, 200px);
+    height: clamp(fit-content, 40%, 200px); */
+}
+
+.in-row-icon {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.white {
+    background-color: var(--background);
+}
+
+.blue {
+    background-color: var(--accent);
+}
+
+.black {
+    background-color: var(--text);
+}
+
+.grey {
+    background-color: var(--secondary-bubble-box-background);
+}

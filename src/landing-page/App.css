@@ -1,0 +1,68 @@
+:root {
+    --text: #0a1919;
+    --background: #fbfdfe;
+    --bubble-box-background: #edf0f1;
+    --secondary-bubble-box-background: #c0c5c6;
+    --red: #b04040;
+    --accent: #40999c;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.in-row-icons {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.about-me-content {
+    width: clamp(40%, 500px, 100%);
+    margin-right: 15px;
+}
+
+.external-content-grid {
+    width: clamp(500px, 100%);
+    height: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-radius: 20px;
+
+    margin-top: 25px;
+    background-color: var(--bubble-box-background);
+}
+
+.top {
+    display: flex;
+    align-items: flex-end;
+
+    margin-bottom: 5px;
+}
+
+.bottom {
+    margin-top: 5px;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.right {
+    display: flex;
+    
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.content-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
