@@ -19,6 +19,7 @@ body {
 
 .about-me-content {
     width: clamp(40%, 500px, 100%);
+    margin-right: 15px;
 }
 
 .external-content-grid {

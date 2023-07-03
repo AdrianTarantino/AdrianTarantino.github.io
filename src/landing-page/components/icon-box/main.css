@@ -18,6 +18,33 @@
 
     background-color: var(--bubble-box-background);
     color: var(--text);
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.size0 {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    margin-left: 3px;
+
+    border-radius: 5px;
+    
+    background-color: var(--red);
+    color: var(--background);
+    font-size: 20px;
+
+    justify-content: center;
+    vertical-align: middle;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .size1 {
