@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Josefin+Sans&family=Roboto+Slab:wght@600&display=swap');
+
+:root {
+    --accent-colour: #A7BBEC;
+    --background-colour: #020202;
+    --text-colour: #CCCBCF;
+
+    background: var(--background-colour);
+}
+
+h1 {
+    font-size: 48px;
+    font-family: 'Hedvig Letters Serif', serif;
+    font-weight: 400;
+    color: var(--text-colour);
+
+    line-height: 3px;
+    letter-spacing: 5px;
+}
+
+p {
+    font-size: 14px;
+    font-family: 'Hedvig Letters Serif', serif;
+    font-weight: 400;
+    color: var(--text-colour);
+
+    line-height: 3px;
+}
