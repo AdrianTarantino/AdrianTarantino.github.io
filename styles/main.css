@@ -27,14 +27,14 @@ p {
 }
 
 img {
-    width: auto;
-    height: 350px;
+    height: auto;
+    width: 500px;
 }
 
 .main-grid-container {
     margin: auto;
     display: grid;
-    grid-template-columns:  repeat(12, 1fr);
+    grid-template-columns:  repeat(11, 1fr);
     grid-template-rows: repeat(12, 1fr);
     width: clamp(470px, 70vw, 1400px);
 }
@@ -45,13 +45,13 @@ img {
     z-index: 2;
 }
 
-#snowboarding-image {
+#coding-image {
     grid-column: 2 / span 6;
     grid-row: 2 / span 2;
     z-index: 2;
 }
 
-#coding-image {
+#snowboarding-image {
     grid-column: 5 / span 6;
     grid-row: 1 / span 2;
 }
