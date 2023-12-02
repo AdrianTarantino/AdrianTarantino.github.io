@@ -9,7 +9,7 @@
 }
 
 h1 {
-    font-size: 32px;
+    font-size: clamp(46px, 4vw, 56px);
     font-family: 'Hedvig Letters Serif', serif;
     font-weight: 400;
     color: var(--text-colour);
@@ -19,7 +19,7 @@ h1 {
 }
 
 p {
-    font-size: 12px;
+    font-size: clamp(16px, 1vw, 20px);
     font-family: 'Hedvig Letters Serif', serif;
     font-weight: 400;
     color: var(--text-colour);
@@ -28,7 +28,7 @@ p {
 
 img {
     width: auto;
-    height: 300px;
+    height: 350px;
 }
 
 .main-grid-container {
