@@ -8,51 +8,42 @@
     background: var(--background-colour);
 }
 
-h1 {
-    font-size: clamp(46px, 4vw, 56px);
+h1, h3 {
+    font-size: clamp(60px, 4vw, 72px);
     font-family: 'Hedvig Letters Serif', serif;
     font-weight: 400;
     color: var(--text-colour);
-    line-height: 3px;
     letter-spacing: 5px;
-    line-break:anywhere;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: clamp(48px, 3.5vw, 60px);
 }
 
 p {
-    font-size: clamp(16px, 1vw, 20px);
+    font-size: clamp(16px, 1vw, 18px);
     font-family: 'Hedvig Letters Serif', serif;
     font-weight: 400;
     color: var(--text-colour);
-    line-height: 3px;
+
+    margin-top: 4px;
 }
 
-img {
-    height: auto;
-    width: 500px;
-}
-
-.main-grid-container {
+.text-flex-container {
     margin: auto;
-    display: grid;
-    grid-template-columns:  repeat(11, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    width: clamp(470px, 70vw, 1400px);
+    margin-top: 80px;
+    width: clamp(350px, 65vw, 1200px);
+    display: flex;
+    flex-direction: column;
+
+    /* border: red 5px solid; */
 }
 
-#title {
-    grid-column: 1 / span 12;
-    grid-row: 1 / span 2;
-    z-index: 2;
+#title-container {
+    align-self: flex-start;
 }
 
-#coding-image {
-    grid-column: 2 / span 6;
-    grid-row: 2 / span 2;
-    z-index: 2;
+#about-me-container {
+    align-self: center;
 }
-
-#snowboarding-image {
-    grid-column: 5 / span 6;
-    grid-row: 1 / span 2;
-}
-
