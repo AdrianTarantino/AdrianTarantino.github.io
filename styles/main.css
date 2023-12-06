@@ -47,21 +47,28 @@
 }
 
 #my-projects-container {
+    width: clamp(500px, 70vw, 1000px);
+}
+
+#my-projects-description-container {
     width: clamp(400px, 50vw, 500px);
 }
 
 .project-box-container-flex {
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 .project-box-grid {
-    width: 260px;
+    width: 250px;
     height: 250px;
     border-radius: 11px;
 
     display: grid;
-    grid-template-rows: 30%, 30%, 30%;
+    grid-template-rows: 70px 110px 80px;
     text-align: center;
 
     padding-left: 22px;
@@ -70,13 +77,6 @@
     margin-left: 5px;
 
     background: var(--accent-colour);
-}
-
-.project-box::child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
 }
 
 .project-box-header {
@@ -96,10 +96,15 @@
 }
 
 .icon {
-    align-self: center;
+    justify-self: center;
     height: auto;
     width: 50px;
 
     margin-left: 2.5px;
     margin-right: 2.5px;
+}
+
+.icon:hover {
+    height: auto;
+    width: 55px
 }
