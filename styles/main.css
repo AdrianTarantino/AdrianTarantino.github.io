@@ -108,3 +108,24 @@
     height: auto;
     width: 55px
 }
+
+.contact-me-grid {
+    width: clamp(400px, 50vw, 500px);
+    padding: 20px;
+    border-radius: 11px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    align-items: center;
+
+    background: var(--accent-colour);
+}
+
+.contact-icon {
+    grid-column: 1 / span 1;
+}
+
+.contact-text {
+    text-align: start;
+    grid-column: 3 / span 6;
+}
