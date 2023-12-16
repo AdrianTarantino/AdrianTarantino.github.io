@@ -32,7 +32,7 @@
 
 .content-container-flex {
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
     width: clamp(350px, 65vw, 1200px);
     display: flex;
     flex-direction: column;
@@ -47,7 +47,8 @@
 }
 
 #my-projects-container {
-    width: clamp(500px, 70vw, 1000px);
+    width: clamp(350px, 70vw, 1000px);
+
 }
 
 #my-projects-description-container {
@@ -58,7 +59,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    justify-content: center;
+    justify-content: start;
     gap: 5px;
 }
 
@@ -110,7 +111,8 @@
 }
 
 .contact-me-grid {
-    width: clamp(400px, 50vw, 500px);
+    height: 300px;
+    width: clamp(400px, 50vw, 600px);
     padding: 20px;
     border-radius: 11px;
 
@@ -122,10 +124,15 @@
 }
 
 .contact-icon {
-    grid-column: 1 / span 1;
+    grid-column: 1 /span 1;
+    grid-row: span 1;
 }
 
 .contact-text {
     text-align: start;
     grid-column: 3 / span 6;
+}
+
+.center {
+    align-items: center;
 }
