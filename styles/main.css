@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Josefin+Sans&family=Roboto+Slab:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap');
+:root {
+    --accent-colour: #89d8be;
+    --background-colour: #020202;
+    --text-colour: #CCCBCF;
+
+    background: var(--background-colour);
+}
+
+.title {
+    font-size: clamp(60px, 4vw, 72px);
+    font-family: 'Hedvig Letters Serif', serif;
+    font-weight: 400;
+    color: var(--text-colour);
+    letter-spacing: 5px;
+    margin-bottom: 0px;
+}
+
+.secondary-title {
+    font-size: clamp(48px, 3.5vw, 60px);
+}
+
+.paragraph {
+    font-size: clamp(16px, 1vw, 18px);
+    font-family: 'Hedvig Letters Serif', serif;
+    font-weight: 400;
+    color: var(--text-colour);
+
+    margin-top: 4px;
+}
+
+.content-container-flex {
+    margin: auto;
+    margin-top: 50px;
+    width: clamp(350px, 65vw, 1200px);
+    display: flex;
+    flex-direction: column;
+}
+
+#title-container {
+    align-self: flex-start;
+}
+
+#about-me-container {
+    align-self: center;
+}
+
+#my-projects-container {
+    width: clamp(350px, 70vw, 1000px);
+
+}
+
+#my-projects-description-container {
+    width: clamp(400px, 50vw, 500px);
+}
+
+.project-box-container-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: start;
+    gap: 5px;
+}
+
+.project-box-grid {
+    width: 250px;
+    height: 250px;
+    border-radius: 11px;
+
+    display: grid;
+    grid-template-rows: 70px 110px 80px;
+    text-align: center;
+
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    background: var(--accent-colour);
+}
+
+.project-box-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 350;
+    text-align: center;
+
+    margin: 0px;
+}
+
+.project-box-paragraph {
+    align-self: flex-start;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.icon {
+    justify-self: center;
+    height: auto;
+    width: 50px;
+
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.icon:hover {
+    height: auto;
+    width: 55px
+}
+
+.contact-me-grid {
+    height: 300px;
+    width: clamp(400px, 50vw, 600px);
+    padding: 20px;
+    border-radius: 11px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    align-items: center;
+
+    background: var(--accent-colour);
+}
+
+.contact-icon {
+    grid-column: 1 /span 1;
+    grid-row: span 1;
+}
+
+.contact-text {
+    text-align: start;
+    grid-column: 3 / span 6;
+}
+
+.center {
+    align-items: center;
+}
