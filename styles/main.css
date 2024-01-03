@@ -2,9 +2,13 @@
 
 :root {
     background-color: peachpuff;
+    background-image: url("../Images/BackgroundImage.jpg");
+    background-size: auto 100vh;
     font-family: 'Carrois Gothic', sans-serif;
     color: white;
 }
+
+
 
 h1 {
     font-size: 48px;
@@ -24,7 +28,7 @@ p {
 
 .content-container {
     background-color: black;
-    width: 560px;
+    width: clamp(460px, 50vw, 560px);
     height: 630px;
 
     display: flex;
