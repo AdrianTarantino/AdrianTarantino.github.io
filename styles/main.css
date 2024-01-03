@@ -4,7 +4,7 @@
     background-color: peachpuff;
     background-image: url("../Images/BackgroundImage.jpg");
     background-position: center;
-    background-size: auto 140vh;
+    background-size: cover;
     font-family: 'Carrois Gothic', sans-serif;
     color: white;
 }
@@ -36,6 +36,7 @@ p {
     background-color: rgba(0, 0, 0, 0.6);
     width: clamp(460px, 50vw, 560px);
     min-height: 630px;
+    padding: 15px;
 
     display: flex;
     flex-direction: column;
@@ -53,9 +54,31 @@ p {
     /* border: red 5px solid; */
 }
 
-img {
+.profile-picture {
     border-radius: 50%;
     width: 240px;
     height: 240px;
     object-fit: cover;
+}
+
+.icon {
+    width: 30px;
+    height: auto;
+}
+
+.icon-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
 }
