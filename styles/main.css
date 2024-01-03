@@ -93,11 +93,11 @@ p {
     body {
         height: -webkit-fill-available;
     }
-    
+
     .content-container {
         background-color: rgba(0, 0, 0, 0.6);
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
         padding: 15px;
     
         display: flex;
