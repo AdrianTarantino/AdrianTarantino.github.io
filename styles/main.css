@@ -1,116 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Hedvig+Letters+Sans&family=Hedvig+Letters+Serif:opsz@12..24&family=Josefin+Sans&family=Roboto+Slab:wght@600&display=swap');
-
-:root {
-    background-color: peachpuff;
-    background-image: url("../Images/BackgroundImage.jpg");
-    background-position: center;
-    background-size: cover;
-    font-family: 'Carrois Gothic', sans-serif;
-    color: white;
+.text {
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
 }
 
-body {
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title {
+    font-size: 5.9vw;
 }
 
-h1 {
-    font-size: clamp(48px, 5vw, 62px);
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-h3 {
-    font-size: clamp(21px, 2.3vw, 26px);
-    padding-top: 0px;
-    margin-top: 0px;
-}
-
-p {
-    font-size: clamp(18px, 1.5vw, 28px);
-    width: 85%;
-}
-
-.content-container {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: clamp(460px, 50vw, 560px);
-    height: fit-content;
-    padding: 15px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-container {
-    width: 83%;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    /* border: red 5px solid; */
-}
-
-.profile-picture {
-    border-radius: 50%;
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-}
-
-.icon {
-    width: 30px;
-    height: auto;
-}
-
-.icon-container {
-    background-color: white;
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon-container-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-}
-
-@media only screen and (max-width: 800px) {
-    html {
-        height: -webkit-fill-available;
-        background-size: auto 150vh;
-    }
-
-    body {
-        height: -webkit-fill-available;
-    }
-
-    .profile-picture {
-        border-radius: 50%;
-        width: 0px;
-        height: 0px;
-        object-fit: cover;
-    }
-
-    .content-container {
-        background-color: rgba(0, 0, 0, 0.6);
-        width: 100vw;
-        height: fit-content;
-        padding: 15px;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.gradient-text {
+    background-image: linear-gradient(90deg, rgba(79,0,148,1) 0%, rgba(214,0,255,1) 100%);
+    background-clip: text;
+    color: transparent;   
 }
