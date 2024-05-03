@@ -5,12 +5,22 @@
     font-style: normal;
 }
 
-.title {
-    font-size: 5.9vw;
+.title, .main-title {
+    font-size: clamp(40px, 4vw, 60px);
 }
 
 .gradient-text {
     background-image: linear-gradient(90deg, rgba(79,0,148,1) 0%, rgba(214,0,255,1) 100%);
     background-clip: text;
     color: transparent;   
+}
+
+.main-content-container {
+    border: red solid 5px;
+    display: flex;
+}
+
+.main-title {
+    flex: 2;
+    border: blue solid 5px;
 }
