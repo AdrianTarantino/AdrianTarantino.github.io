@@ -7,6 +7,7 @@
 
 .title, .main-title {
     font-size: clamp(40px, 4vw, 60px);
+    text-wrap: balance;
 }
 
 .gradient-text {
@@ -16,11 +17,23 @@
 }
 
 .main-content-container {
-    border: red solid 5px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: clamp(400px, 50vw, 700px);
+    gap: 10px;
 }
 
 .main-title {
-    flex: 2;
-    border: blue solid 5px;
+    width: max(350px, 50%);
+}
+
+.profile-picture {
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: 50% 5%;
+    border-radius: 50%;
 }
