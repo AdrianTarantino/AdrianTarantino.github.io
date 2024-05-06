@@ -1,12 +1,28 @@
+html {
+    background-image:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.005) 0, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-attachment: fixed;
+    background-color:#121212;
+
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* border: red solid 5px; */
+}
+
 .text {
     font-family: "Inter Tight", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400px;
     font-style: normal;
+    color: #ffffff;
 }
 
 .title, .main-title {
-    font-size: clamp(40px, 4vw, 60px);
+    font-size: clamp(45px, 5vw, 56px);
     text-wrap: balance;
 }
 
@@ -27,10 +43,15 @@
 }
 
 .main-title {
-    width: max(350px, 50%);
+    width: max(200px, 50%);
 }
 
 .profile-picture {
+    width: 200px;
+    width: 25vw;
+    width: 150px;
+
+    width: clamp(150px, 25vw, 200px);
     width: 200px;
     aspect-ratio: 1/1;
     object-fit: cover;
