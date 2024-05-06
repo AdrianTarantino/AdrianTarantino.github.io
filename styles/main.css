@@ -18,6 +18,7 @@ html {
     font-optical-sizing: auto;
     font-weight: 400px;
     font-style: normal;
+    font-size: clamp(25px, 2vw, 32px);
     color: #ffffff;
 }
 
@@ -40,6 +41,9 @@ html {
     justify-content: center;
     width: clamp(400px, 50vw, 700px);
     gap: 10px;
+
+    /* border: red solid 5px; */
+
 }
 
 .main-title {
