@@ -18,7 +18,7 @@ html {
     font-optical-sizing: auto;
     font-weight: 400px;
     font-style: normal;
-    font-size: clamp(25px, 2vw, 32px);
+    font-size: clamp(25px, 1.2vw, 32px);
     color: #ffffff;
 }
 
@@ -61,4 +61,11 @@ html {
     object-fit: cover;
     object-position: 50% 5%;
     border-radius: 50%;
+}
+
+.description-box {
+    text-align: center;
+    width: calc(100% - 50px);
+
+    /* border: blue 5px solid; */
 }
