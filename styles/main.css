@@ -64,7 +64,8 @@ html {
 }
 
 .description-box {
-    text-align: center;
+    text-align: left;
+    margin-left: 70px;
     width: calc(100% - 50px);
 
     /* border: blue 5px solid; */
