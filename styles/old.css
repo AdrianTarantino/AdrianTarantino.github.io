@@ -1,0 +1,72 @@
+html {
+    background-image:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.005) 0, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-attachment: fixed;
+    background-color:#121212;
+
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* border: red solid 5px; */
+}
+
+.text {
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: clamp(25px, 1.2vw, 32px);
+    color: #ffffff;
+}
+
+.title, .main-title {
+    font-size: clamp(45px, 5vw, 56px);
+    text-wrap: balance;
+}
+
+.gradient-text {
+    background-image: linear-gradient(90deg, rgba(79,0,148,1) 0%, rgba(214,0,255,1) 100%);
+    background-clip: text;
+    color: transparent;   
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: clamp(400px, 50vw, 700px);
+    gap: 10px;
+
+    /* border: red solid 5px; */
+
+}
+
+.main-title {
+    width: max(200px, 50%);
+}
+
+.profile-picture {
+    width: 200px;
+    width: 25vw;
+    width: 150px;
+
+    width: clamp(150px, 25vw, 200px);
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: 50% 5%;
+    border-radius: 50%;
+}
+
+.description-box {
+    text-align: left;
+    margin-left: 70px;
+    width: calc(100% - 50px);
+
+    /* border: blue 5px solid; */
+}
