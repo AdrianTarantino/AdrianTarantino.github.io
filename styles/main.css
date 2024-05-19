@@ -18,14 +18,19 @@ body {
 
 h1 {
     font-size: 3.5rem;
-    /* border: red solid 5px; */
     margin-bottom: 0;
 }
 
 p {
     font-size: 1.8rem;
+    
+    margin-top: 15px;
+    /* width: 80% */
+}
+
+h1, p {
     /* border: red solid 5px; */
-    margin-top: 5px;
+    width: min(80%, 370px);
 }
 
 .profile-picture {
@@ -38,7 +43,7 @@ p {
 }
 
 .main-content-container {
-    border: red solid 5px;
+    /* border: red solid 5px; */
     display: flex;
     column-gap: 10px;
     justify-content: center;
