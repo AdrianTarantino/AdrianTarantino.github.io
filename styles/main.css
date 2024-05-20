@@ -7,6 +7,7 @@ html {
     background-attachment: fixed;
     background-color:#121212;
 
+    overflow-y: scroll;
     scroll-behavior: smooth;
 }
 
@@ -97,4 +98,30 @@ h1, .description-box {
 
 .navigation-bar > p:hover {
     color: rgb(163, 3, 212);   
+}
+
+@media only screen and (max-width: 600px) {
+    /* Main Content Container */
+    .main-content-container {
+        left: 0%;
+        width: 100vw;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .description-box {
+        width: 250px;
+    }
+
+    /* Navigation Bar */
+    .navigation-bar {
+        column-gap: 32px;
+    }
 }
