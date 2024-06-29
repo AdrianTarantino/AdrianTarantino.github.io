@@ -47,7 +47,7 @@ p {
   margin: auto;
   margin-top: 50px;
   width: clamp(300px, 25vw, 600px);
-  height: 95vh;
+  height: 105vh;
 
   display: flex;
   flex-direction: column;
