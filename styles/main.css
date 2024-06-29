@@ -61,3 +61,30 @@ p {
   border-radius: 125px;
 }
 
+.icons-container {
+  /* border: red solid 5px; */
+  width: 85%;
+  height: 80px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  align-self: center;
+  margin-top: 80px;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.icons-container > img {
+  height: 60px;
+  transition: height 100ms ease-out 100ms
+}
+
+.icons-container > img:hover {
+  height: 66px;
+  aspect-ratio:initial;
+}
+
