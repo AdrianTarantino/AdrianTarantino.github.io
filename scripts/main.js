@@ -18,27 +18,27 @@ const emptyTime = 500;
 typewriter
   .pauseFor(startTime)
   .typeString(educationString)
-  .pauseFor(fullTime)
+  .pauseFor(fullTime * 3)
   .deleteChars(educationString.length)
   .pauseFor(emptyTime)
 
   .typeString(frcString)
-  .pauseFor(fullTime)
+  .pauseFor(fullTime * 3)
   .deleteChars(frcString.length)
   .pauseFor(emptyTime)
   
   .typeString(jobString)
-  .pauseFor(fullTime)
+  .pauseFor(fullTime * 3)
   .deleteChars(jobString.length)
   .pauseFor(emptyTime)
 
   .typeString(electronicsString)
-  .pauseFor(fullTime)
+  .pauseFor(fullTime * 3)
   .deleteChars(electronicsString.length)
   .pauseFor(emptyTime)
 
   .typeString(programmingString)
-  .pauseFor(fullTime)
+  .pauseFor(fullTime * 3)
   .deleteChars(programmingString.length)
   .pauseFor(emptyTime)
 
