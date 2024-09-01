@@ -23,6 +23,7 @@ h1 {
   font-weight: 500;
 
   margin-bottom:0px;
+  margin-top: 0px;
 }
 
 h3 {
@@ -45,9 +46,9 @@ p {
   /* border: red solid 5px; */
 
   margin: auto;
-  margin-top: 50px;
-  width: clamp(300px, 25vw, 600px);
-  height: 105vh;
+  margin-top: 20px;
+  width: clamp(300px, 33vw, 600px);
+  height: fit-content;
 
   display: flex;
   flex-direction: column;
@@ -68,8 +69,9 @@ p {
   height: 80px;
   border-radius: 15px;
   background-color: aliceblue;
+  justify-self: flex-end;
   align-self: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   padding: 10px;
 
   display: grid;
@@ -87,6 +89,10 @@ p {
 .icons-container > img:hover {
   height: 2.45rem;
   aspect-ratio:initial;
+}
+
+.not-first-page {
+  margin-top: 40vh;
 }
 
 @media only screen and (max-width: 900px) {
