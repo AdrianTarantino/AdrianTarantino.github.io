@@ -1,8 +1,30 @@
 
+'use client'
+
 import React from 'react'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import IconButton from './IconButton'
 
 const ProfileContainer = () => {
+  const [currentProjectName, setCurrentProjectName] = useState("");
+  const [currentProjectURL, setCurrentProjectURL] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://api.github.com/users/AdrianTheHacker/repos?per_page=1&page=1&sort=updated');
+        const result = await response.json();
+        const projectName = result[0]["name"];
+        const projectURL = result[0]["html_url"];
+        setCurrentProjectName(projectName);
+        setCurrentProjectURL(projectURL);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, []);
   return (
     <div className="hero md:bg-base-200 lg:bg-base-200 h-svh w-svw">
       <div className="hero-content flex-col lg:flex-row">
@@ -19,6 +41,7 @@ const ProfileContainer = () => {
             <IconButton imagePath="/mailIcon.png" url="mailto:adrian.tarantino.career@gmail.com" />
             <IconButton imagePath="/youtubeIcon.png" url="https://www.youtube.com/@AdrianTheHacker" />
           </div>
+          <h1 className="text-balance py-6 text-2xl font-bold">Currently I'm working on: <Link className="underline" href={currentProjectURL} passHref={true}>{currentProjectName}</Link></h1>
         </div>
       </div>
     </div>
