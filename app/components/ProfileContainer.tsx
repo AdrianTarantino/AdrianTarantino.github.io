@@ -13,10 +13,10 @@ const ProfileContainer = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('https://api.github.com/users/AdrianTheHacker/repos?per_page=1&page=1&sort=updated');
+        const response = await fetch('https://api.github.com/users/AdrianTheHacker/events/public');
         const result = await response.json();
-        const projectName = result[0]["name"];
-        const projectURL = result[0]["html_url"];
+        const projectName = result[0]["repo"]["name"];
+        const projectURL = result[0]["repo"]["url"];
         setCurrentProjectName(projectName);
         setCurrentProjectURL(projectURL);
       } catch (error) {
