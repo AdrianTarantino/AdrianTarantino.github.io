@@ -16,7 +16,12 @@ const ProfileContainer = () => {
         const response = await fetch('https://api.github.com/users/AdrianTheHacker/events/public');
         const result = await response.json();
         const projectName = result[0]["repo"]["name"];
-        const projectURL = result[0]["repo"]["url"];
+        const projectAPIURL = result[0]["repo"]["url"];
+
+        const project_response = await fetch(projectAPIURL);
+        const project_result = await project_response.json()
+        const projectURL = project_result["html_url"]
+
         setCurrentProjectName(projectName);
         setCurrentProjectURL(projectURL);
       } catch (error) {
