@@ -39,7 +39,7 @@ const ProfileContainer = () => {
           className="max-w-sm rounded-lg shadow-2xl" />
         <div>
           <h1 className="text-5xl font-bold">Adrian Tarantino</h1>
-          <p className="py-6">First Year Electrical Engineering Student at The University of Waterloo</p>
+          <p className="py-6">Electrical Engineering Student at The University of Waterloo</p>
           <div className="flex w-auto items-center gap-5">
             <IconButton imagePath="/githubIcon.png" url="https://github.com/AdrianTheHacker" />
             <IconButton imagePath="/linkedInIcon.png" url="https://www.linkedin.com/in/adriantarantino/" />
