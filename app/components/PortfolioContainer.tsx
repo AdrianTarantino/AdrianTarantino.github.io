@@ -107,21 +107,21 @@ const ProjectImageCarousel = ({ project }: { project: PortfolioProject }) => {
 const PortfolioContainer = () => {
   return (
     <section id="portfolio" className="bg-base-200 px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10">
-          <h2 className="text-4xl font-bold">Portfolio</h2>
-          <p className="mt-3 max-w-2xl text-lg">
+      <div className="mx-auto max-w-6xl min-w-0">
+        <div className="mb-10 min-w-0 break-words">
+          <h2 className="text-4xl font-bold break-words">Portfolio</h2>
+          <p className="mt-3 max-w-2xl text-lg break-words">
             A selection of projects I have built while exploring software, electronics, and engineering.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid min-w-0 gap-6 md:grid-cols-2">
           {projects.map((project, i) => (
-            <article key={i} className="card bg-base-100 shadow-xl">
+            <article key={i} className="card min-w-0 bg-base-100 shadow-xl">
               <ProjectImageCarousel project={project} />
-              <div className="card-body">
-                <h3 className="card-title">{project.title}</h3>
-                <p>{project.description}</p>
+              <div className="card-body min-w-0 break-words">
+                <h3 className="card-title break-words">{project.title}</h3>
+                <p className="break-words">{project.description}</p>
                 {project.githubUrl && (
                   <div className="card-actions justify-end">
                     <a className="btn btn-primary" href={project.githubUrl} target="_blank" rel="noreferrer">
