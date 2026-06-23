@@ -1,10 +1,12 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 type PortfolioProject = {
   title: string
   description: string
-  imagePath: string
+  imagePath: string[]
   githubUrl?: string
 }
 
@@ -12,21 +14,95 @@ const projects: PortfolioProject[] = [
   {
     title: 'Thruster Control Board',
     description: 'Designed an STM32 based circuit board using Altium Designer for controlling thrusters and interfacing with sensors used for autonomous search and rescue robot for open body water.',
-    imagePath: '/uwmtr-control-board-pcb.png',
+    imagePath: ['/uwmtr-control-board-pcb.png'],
     githubUrl: 'https://github.com/UWMedTechRobotics/ESC_V1_Firmware_Tests',
   },
   {
     title: 'WiFi Capable Etch-A-Sketch',
     description: 'Firmware and circuit experiments focused on hardware control, sensors, and practical electronics.',
-    imagePath: '/githubIcon.png',
+    imagePath: [
+      '/etchasketch-3d-top.png',
+      '/etchasketch-3d-bottom.png',
+      '/etchasketch-layout-bottom.png',
+      '/etchasketch-schematic-processor.png',
+      '/etchasketch-schematic-system-layout.png',
+    ],
     githubUrl: 'https://github.com/AdrianTheHacker/Etch-A-Sketch-Concept',
   },
   {
     title: 'Robotics Prototypes',
     description: 'Mechanical, electrical, and software builds exploring automation and motion-control ideas.',
-    imagePath: '/linkedInIcon2.png',
+    imagePath: ['/linkedInIcon2.png'],
   },
 ]
+
+const ProjectImageCarousel = ({ project }: { project: PortfolioProject }) => {
+  const [activeImage, setActiveImage] = useState(0)
+  const hasMultipleImages = project.imagePath.length > 1
+
+  const showPreviousImage = () => {
+    setActiveImage((currentImage) =>
+      currentImage === 0 ? project.imagePath.length - 1 : currentImage - 1,
+    )
+  }
+
+  const showNextImage = () => {
+    setActiveImage((currentImage) =>
+      currentImage === project.imagePath.length - 1 ? 0 : currentImage + 1,
+    )
+  }
+
+  return (
+    <figure className="relative h-56 overflow-hidden bg-base-300">
+      {project.imagePath.map((imagePath, imageIndex) => (
+        <Image
+          key={imagePath}
+          src={imagePath}
+          alt={`${project.title} project preview ${imageIndex + 1}`}
+          width={640}
+          height={360}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+            imageIndex === activeImage ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
+
+      {hasMultipleImages && (
+        <>
+          <button
+            type="button"
+            aria-label={`Show previous ${project.title} image`}
+            className="btn btn-circle btn-sm absolute left-3 top-1/2 -translate-y-1/2"
+            onClick={showPreviousImage}
+          >
+            {'<'}
+          </button>
+          <button
+            type="button"
+            aria-label={`Show next ${project.title} image`}
+            className="btn btn-circle btn-sm absolute right-3 top-1/2 -translate-y-1/2"
+            onClick={showNextImage}
+          >
+            {'>'}
+          </button>
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+            {project.imagePath.map((imagePath, imageIndex) => (
+              <button
+                key={imagePath}
+                type="button"
+                aria-label={`Show ${project.title} image ${imageIndex + 1}`}
+                className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                  imageIndex === activeImage ? 'bg-primary' : 'bg-base-100/70'
+                }`}
+                onClick={() => setActiveImage(imageIndex)}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </figure>
+  )
+}
 
 const PortfolioContainer = () => {
   return (
@@ -42,15 +118,7 @@ const PortfolioContainer = () => {
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project, i) => (
             <article key={i} className="card bg-base-100 shadow-xl">
-              <figure className="h-56 bg-base-300">
-                <Image
-                  src={project.imagePath}
-                  alt={`${project.title} project preview`}
-                  width={640}
-                  height={360}
-                  className="h-full w-full object-cover"
-                />
-              </figure>
+              <ProjectImageCarousel project={project} />
               <div className="card-body">
                 <h3 className="card-title">{project.title}</h3>
                 <p>{project.description}</p>
