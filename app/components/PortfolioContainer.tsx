@@ -29,11 +29,11 @@ const projects: PortfolioProject[] = [
     ],
     githubUrl: 'https://github.com/AdrianTheHacker/Etch-A-Sketch-Concept',
   },
-  {
-    title: 'Robotics Prototypes',
-    description: 'Mechanical, electrical, and software builds exploring automation and motion-control ideas.',
-    imagePath: ['/linkedInIcon2.png'],
-  },
+  // {
+  //   title: 'Robotics Prototypes',
+  //   description: 'Mechanical, electrical, and software builds exploring automation and motion-control ideas.',
+  //   imagePath: ['/linkedInIcon2.png'],
+  // },
 ]
 
 const ProjectImageCarousel = ({ project }: { project: PortfolioProject }) => {
