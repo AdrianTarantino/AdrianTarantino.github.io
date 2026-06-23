@@ -3,33 +3,46 @@
 
 import React from 'react'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import IconButton from './IconButton'
 
+type GitHubPublicEvent = {
+  type: string
+  repo?: {
+    name?: string
+  }
+}
+
+const GITHUB_USERNAME = 'AdrianTarantino'
+
 const ProfileContainer = () => {
-  const [currentProjectName, setCurrentProjectName] = useState("");
-  const [currentProjectURL, setCurrentProjectURL] = useState("");
+  const [currentProjectURL, setCurrentProjectURL] = useState('')
+  const [currentProjectStatus, setCurrentProjectStatus] = useState('Checking GitHub...')
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('https://api.github.com/users/AdrianTheHacker/events/public');
-        const result = await response.json();
-        const projectName = result[0]["repo"]["name"];
-        const projectAPIURL = result[0]["repo"]["url"];
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/events/public`)
 
-        const project_response = await fetch(projectAPIURL);
-        const project_result = await project_response.json()
-        const projectURL = project_result["html_url"]
+        if (!response.ok) {
+          throw new Error(`GitHub request failed with status ${response.status}`)
+        }
 
-        setCurrentProjectName(projectName);
-        setCurrentProjectURL(projectURL);
+        const result = await response.json() as GitHubPublicEvent[]
+        const latestPushEvent = result.find((event) => event.type === 'PushEvent' && event.repo?.name)
+        const repoName = latestPushEvent?.repo?.name
+
+        if (repoName) {
+          setCurrentProjectURL(`https://github.com/${repoName}`)
+        } else {
+          setCurrentProjectStatus('No recent public commit found.')
+        }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
+        setCurrentProjectStatus('Unable to load GitHub activity.')
       }
     }
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
   return (
     <div className="hero md:bg-base-200 lg:bg-base-200 h-svh w-svw">
       <div className="hero-content flex-col lg:flex-row">
@@ -46,7 +59,16 @@ const ProfileContainer = () => {
             <IconButton imagePath="/mailIcon.png" url="mailto:adrian.tarantino.career@gmail.com" />
             <IconButton imagePath="/youtubeIcon.png" url="https://www.youtube.com/@AdrianTheHacker" />
           </div>
-          <h1 className="text-balance py-6 text-2xl font-bold">Currently I'm working on: <Link className="underline" href={currentProjectURL} passHref={true}>{currentProjectName}</Link></h1>
+          <h1 className="text-balance py-6 text-2xl font-bold">
+            Currently I'm working on:{' '}
+            {currentProjectURL ? (
+              <a className="underline" href={currentProjectURL} target="_blank" rel="noreferrer">
+                {currentProjectURL.replace(new RegExp(`^${"https://github.com/"}`), "")}
+              </a>
+            ) : (
+              <span>{currentProjectStatus}</span>
+            )}
+          </h1>
         </div>
       </div>
     </div>
