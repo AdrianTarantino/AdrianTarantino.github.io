@@ -19,7 +19,7 @@ const projects: PortfolioProject[] = [
   },
   {
     title: 'WiFi Capable Etch-A-Sketch',
-    description: 'Etch-A-Sketch with WiFi module for IoT integration and E-Ink screen for power efficiency.',
+    description: 'Etch-A-Sketch with WiFi module for IoT integration and E-Ink screen for improved power efficiency.',
     imagePath: [
       '/etchasketch-3d-top.png',
       '/etchasketch-3d-bottom.png',
