@@ -15,11 +15,11 @@ const projects: PortfolioProject[] = [
     title: 'Thruster Control Board',
     description: 'Designed an STM32 based circuit board using Altium Designer for controlling thrusters and interfacing with sensors used for autonomous search and rescue robot for open body water.',
     imagePath: ['/uwmtr-control-board-pcb.png'],
-    githubUrl: 'https://github.com/UWMedTechRobotics/ESC_V1_Firmware_Tests',
+    githubUrl: 'https://github.com/UWMedTechRobotics/uwmtr-thruster-control-board',
   },
   {
     title: 'WiFi Capable Etch-A-Sketch',
-    description: 'Firmware and circuit experiments focused on hardware control, sensors, and practical electronics.',
+    description: 'Etch-A-Sketch with WiFi module for IoT integration and E-Ink screen for power efficiency.',
     imagePath: [
       '/etchasketch-3d-top.png',
       '/etchasketch-3d-bottom.png',
